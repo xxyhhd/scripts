@@ -89,7 +89,7 @@ def init_mysql():
 
 
 def modify_passwd():
-    os.system('/home/mysqls/mysql{0}/service/bin/mysql -uroot -S /tmp/mysql{0}.sock -P{0} -e \"update mysql.user set password = PASSWORD(\'123456\'), host = \'%\' where user = \'root\' and host = \'localhost\';flush privileges;\"'.format(db_port))
+    os.system('/home/mysqls/mysql{0}/service/bin/mysql -uroot -S /tmp/mysql{0}.sock -P{0} -e \"update mysql.user set password = PASSWORD(\'123456\') where user = \'root\';flush privileges;\"'.format(db_port))
     logger.info('修改root账号密码')
 
 def create_repl_account(passwd):
